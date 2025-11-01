@@ -13,11 +13,8 @@
 # production
 /build
 
-# database
-/data
-*.db
-*.db-shm
-*.db-wal
+# database - важно сохранять в production
+# /data
 
 # misc
 .DS_Store
@@ -30,7 +27,6 @@ yarn-error.log*
 
 # local env files
 .env*.local
-.env
 
 # vercel
 .vercel

@@ -47,30 +47,30 @@ export default function SchedulePage() {
     <div className="min-h-screen gradient-overlay">
       <Navigation />
 
-      <main className="container mx-auto px-4 pt-32 pb-20">
+      <main className="container mx-auto px-4 pt-20 pb-12 md:pt-32 md:pb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
           {/* Заголовок */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="mb-4">
+              <h1 className="mb-3 md:mb-4 text-3xl md:text-5xl">
                 <span data-testid="schedule-title" className="text-gradient-real">📅 РАСПИСАНИЕ</span>{' '}
                 <span className="text-gradient-barca">МАТЧЕЙ</span>
               </h1>
-              <p className="text-xl text-gray-400">
+              <p className="text-base md:text-xl text-gray-400 px-4">
                 Все матчи легендарного противостояния
               </p>
             </motion.div>
             
             {/* Декоративная линия */}
             <motion.div 
-              className="decorative-line max-w-md mx-auto mt-8"
+              className="decorative-line max-w-md mx-auto mt-6 md:mt-8"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -82,43 +82,43 @@ export default function SchedulePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto"
+            className="grid grid-cols-3 gap-3 md:gap-4 mb-8 md:mb-12 max-w-4xl mx-auto"
           >
             <div className="card text-center bg-gradient-to-br from-real-gold/10 to-transparent border-real-gold/30">
-              <div className="text-4xl font-black text-gradient-real mb-2">
+              <div className="text-2xl md:text-4xl font-black text-gradient-real mb-1 md:mb-2">
                 {upcomingMatches.length}
               </div>
-              <div className="text-sm text-gray-400">Запланировано</div>
+              <div className="text-xs md:text-sm text-gray-400">Запланировано</div>
             </div>
             
             <div className="card text-center bg-gradient-to-br from-white/5 to-transparent border-white/20">
-              <div className="text-4xl font-black text-white mb-2">
+              <div className="text-2xl md:text-4xl font-black text-white mb-1 md:mb-2">
                 {matches.length}
               </div>
-              <div className="text-sm text-gray-400">Всего матчей</div>
+              <div className="text-xs md:text-sm text-gray-400">Всего матчей</div>
             </div>
             
             <div className="card text-center bg-gradient-to-br from-barca-blue/10 to-transparent border-barca-blue/30">
-              <div className="text-4xl font-black text-gradient-barca mb-2">
+              <div className="text-2xl md:text-4xl font-black text-gradient-barca mb-1 md:mb-2">
                 {pastMatches.length}
               </div>
-              <div className="text-sm text-gray-400">Сыграно</div>
+              <div className="text-xs md:text-sm text-gray-400">Сыграно</div>
             </div>
           </motion.div>
 
           {/* Предстоящие матчи */}
-          <section className="mb-16">
+          <section className="mb-12 md:mb-16">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex items-center gap-4 mb-8"
+              className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 mb-6 md:mb-8"
             >
-              <div className="text-4xl">🔜</div>
-              <h2 className="text-3xl font-bold text-white">Предстоящие матчи</h2>
+              <div className="text-3xl md:text-4xl">🔜</div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">Предстоящие матчи</h2>
               {upcomingMatches.length > 0 && (
-                <div className="ml-auto">
-                  <span className="px-4 py-2 bg-green-500/20 border border-green-500/40 rounded-full text-green-400 text-sm font-bold">
+                <div className="sm:ml-auto">
+                  <span className="px-3 py-1 md:px-4 md:py-2 bg-green-500/20 border border-green-500/40 rounded-full text-green-400 text-xs md:text-sm font-bold">
                     {upcomingMatches.length} матчей
                   </span>
                 </div>
@@ -150,13 +150,13 @@ export default function SchedulePage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="flex items-center gap-4 mb-8"
+              className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 mb-6 md:mb-8"
             >
-              <div className="text-4xl">🏁</div>
-              <h2 className="text-3xl font-bold text-white">Сыгранные матчи</h2>
+              <div className="text-3xl md:text-4xl">🏁</div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">Сыгранные матчи</h2>
               {pastMatches.length > 0 && (
-                <div className="ml-auto">
-                  <span className="px-4 py-2 bg-gray-500/20 border border-gray-500/40 rounded-full text-gray-400 text-sm font-bold">
+                <div className="sm:ml-auto">
+                  <span className="px-3 py-1 md:px-4 md:py-2 bg-gray-500/20 border border-gray-500/40 rounded-full text-gray-400 text-xs md:text-sm font-bold">
                     {pastMatches.length} завершено
                   </span>
                 </div>
@@ -175,8 +175,8 @@ export default function SchedulePage() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="card text-center bg-gradient-to-br from-gray-500/10 to-transparent border-dashed"
               >
-                <div className="text-6xl mb-4">🕰️</div>
-                <div className="text-xl text-gray-400 mb-2">История матчей пуста</div>
+                <div className="text-5xl md:text-6xl mb-3 md:mb-4">🕰️</div>
+                <div className="text-lg md:text-xl text-gray-400 mb-2">История матчей пуста</div>
                 <div className="text-sm text-gray-500">Первый матч еще впереди</div>
               </motion.div>
             )}

@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Сергей",
+      "email": "sergey@elclasico.ru",
+      "password_hash": "$2a$10$ObzoIjSs3FeT.19ZTtZkl.CFOGsBBayRWxTQkB8o/Msc8VWg3qfbS",
+      "plain_password": "qopdota2",
+      "role": "superadmin",
+      "created_at": "2025-11-01T12:00:00.000Z"
+    }
+  ],
+  "matches": [
+    {
+      "id": 10,
+      "created_at": "2025-11-01T14:58:22.006Z",
+      "updated_at": "2025-11-01T14:58:22.006Z",
+      "match_datetime": "2025-11-03T17:00:00.000Z",
+      "location": "ул. Константина Заслонова, 23 корпус 4, Санкт-Петербург, Россия, 191119",
+      "status": "scheduled",
+      "lineup_real": null,
+      "lineup_barca": null,
+      "coach_real": null,
+      "coach_barca": null
+    }
+  ],
+  "nextUserId": 7,
+  "nextMatchId": 11,
+  "settings": {
+    "siteName": "Amateur El Clásico",
+    "database": "JSON (data/elclasico.json)",
+    "theme": "Тёмная",
+    "colors": {
+      "realMadrid": {
+        "primary": "#FFD700",
+        "secondary": "#FFAA00"
+      },
+      "barcelona": {
+        "primary": "#0052A5",
+        "secondary": "#DC0028"
+      }
+    }
+  }
+}

@@ -70,13 +70,13 @@ export default function StatsPage() {
     <div className="min-h-screen">
       <Navigation />
 
-      <main className="container mx-auto px-4 pt-32 pb-20">
+      <main className="container mx-auto px-4 pt-20 pb-12 md:pt-32 md:pb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="space-y-12"
+          className="space-y-8 md:space-y-12"
         >
-          <h1 className="text-center" data-testid="stats-title">
+          <h1 className="text-center text-3xl md:text-5xl" data-testid="stats-title">
             <span className="text-gradient-real">СТАТИСТИКА</span>{' '}
             <span className="text-gradient-barca">{currentYear}</span>
           </h1>
@@ -89,65 +89,65 @@ export default function StatsPage() {
               transition={{ delay: 0.3 }}
             >
               <div className="card">
-                <h3 className="text-3xl font-bold text-center mb-8 text-white">
+                <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8 text-white">
                   📊 ОБЩАЯ СТАТИСТИКА
                 </h3>
                 
-                <div className="grid md:grid-cols-5 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-6">
                   {/* Реал победы */}
                   <motion.div
-                    className="bg-gradient-to-br from-real-gold/20 to-transparent border border-real-gold/30 rounded-xl p-6 text-center"
+                    className="bg-gradient-to-br from-real-gold/20 to-transparent border border-real-gold/30 rounded-xl p-4 md:p-6 text-center"
                     whileHover={{ scale: 1.05, borderColor: 'rgba(255, 215, 0, 0.6)' }}
                   >
-                    <div className="text-5xl font-black text-gradient-real mb-2">{realStats.wins}</div>
-                    <div className="text-sm text-gray-400">Побед Реала</div>
+                    <div className="text-3xl md:text-5xl font-black text-gradient-real mb-1 md:mb-2">{realStats.wins}</div>
+                    <div className="text-xs md:text-sm text-gray-400">Побед Реала</div>
                   </motion.div>
 
                   {/* Ничьи */}
                   <motion.div
-                    className="bg-dark-accent border border-white/20 rounded-xl p-6 text-center"
+                    className="bg-dark-accent border border-white/20 rounded-xl p-4 md:p-6 text-center"
                     whileHover={{ scale: 1.05, borderColor: 'rgba(255, 255, 255, 0.4)' }}
                   >
-                    <div className="text-5xl font-black text-white mb-2">{realStats.draws}</div>
-                    <div className="text-sm text-gray-400">Ничьих</div>
+                    <div className="text-3xl md:text-5xl font-black text-white mb-1 md:mb-2">{realStats.draws}</div>
+                    <div className="text-xs md:text-sm text-gray-400">Ничьих</div>
                   </motion.div>
 
                   {/* Барса победы */}
                   <motion.div
-                    className="bg-gradient-to-br from-barca-blue/20 to-transparent border border-barca-blue/30 rounded-xl p-6 text-center"
+                    className="bg-gradient-to-br from-barca-blue/20 to-transparent border border-barca-blue/30 rounded-xl p-4 md:p-6 text-center"
                     whileHover={{ scale: 1.05, borderColor: 'rgba(0, 82, 165, 0.6)' }}
                   >
-                    <div className="text-5xl font-black text-gradient-barca mb-2">{barcaStats.wins}</div>
-                    <div className="text-sm text-gray-400">Побед Барсы</div>
+                    <div className="text-3xl md:text-5xl font-black text-gradient-barca mb-1 md:mb-2">{barcaStats.wins}</div>
+                    <div className="text-xs md:text-sm text-gray-400">Побед Барсы</div>
                   </motion.div>
 
                   {/* Голы Реала */}
                   <motion.div
-                    className="bg-gradient-to-br from-yellow-400/10 to-transparent border border-real-gold/20 rounded-xl p-6 text-center"
+                    className="bg-gradient-to-br from-yellow-400/10 to-transparent border border-real-gold/20 rounded-xl p-4 md:p-6 text-center"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <div className="text-4xl font-black text-gradient-real mb-2">{realStats.goalsScored}</div>
+                    <div className="text-3xl md:text-4xl font-black text-gradient-real mb-1 md:mb-2">{realStats.goalsScored}</div>
                     <div className="text-xs text-gray-400">⚽ Голов Реала</div>
                   </motion.div>
 
                   {/* Голы Барсы */}
                   <motion.div
-                    className="bg-gradient-to-br from-barca-red/10 to-transparent border border-barca-red/20 rounded-xl p-6 text-center"
+                    className="bg-gradient-to-br from-barca-red/10 to-transparent border border-barca-red/20 rounded-xl p-4 md:p-6 text-center"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <div className="text-4xl font-black text-gradient-barca mb-2">{barcaStats.goalsScored}</div>
+                    <div className="text-3xl md:text-4xl font-black text-gradient-barca mb-1 md:mb-2">{barcaStats.goalsScored}</div>
                     <div className="text-xs text-gray-400">⚽ Голов Барсы</div>
                   </motion.div>
                 </div>
 
                 {/* Прогресс бар соотношения побед */}
-                <div className="mt-8">
+                <div className="mt-6 md:mt-8">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm text-gradient-real font-bold">РЕАЛ</span>
-                    <span className="text-sm text-gray-500">Соотношение побед</span>
-                    <span className="text-sm text-gradient-barca font-bold">БАРСА</span>
+                    <span className="text-xs md:text-sm text-gradient-real font-bold">РЕАЛ</span>
+                    <span className="text-xs md:text-sm text-gray-500">Соотношение побед</span>
+                    <span className="text-xs md:text-sm text-gradient-barca font-bold">БАРСА</span>
                   </div>
-                  <div className="h-6 bg-dark-accent rounded-full overflow-hidden flex">
+                  <div className="h-4 md:h-6 bg-dark-accent rounded-full overflow-hidden flex">
                     <motion.div
                       className="bg-gradient-to-r from-real-gold to-yellow-400"
                       initial={{ width: 0 }}
@@ -171,71 +171,76 @@ export default function StatsPage() {
           )}
 
           {/* Таблица статистики */}
-          <div className="card overflow-x-auto">
-            <h2 className="text-2xl font-bold mb-6 text-center">
+          <div className="card">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center">
               📊 Турнирная таблица {currentYear}
             </h2>
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-white/10">
-                  <th className="text-left py-3 px-4">Команда</th>
-                  <th className="text-center py-3 px-2">И</th>
-                  <th className="text-center py-3 px-2">В</th>
-                  <th className="text-center py-3 px-2">Н</th>
-                  <th className="text-center py-3 px-2">П</th>
-                  <th className="text-center py-3 px-2">ЗГ</th>
-                  <th className="text-center py-3 px-2">ПГ</th>
-                  <th className="text-center py-3 px-2">РГ</th>
-                  <th className="text-center py-3 px-2 font-bold">О</th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* Сортируем по очкам */}
-                {[
-                  { name: 'РЕАЛ МАДРИД', stats: realStats, gradient: 'text-gradient-real' },
-                  { name: 'БАРСЕЛОНА', stats: barcaStats, gradient: 'text-gradient-barca' },
-                ]
-                  .sort((a, b) => b.stats.points - a.stats.points)
-                  .map((team, idx) => (
-                    <tr key={team.name} className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-4">
-                        <span className={`font-bold ${team.gradient}`}>
-                          {idx + 1}. {team.name}
-                        </span>
-                      </td>
-                      <td className="text-center py-4 px-2">{team.stats.matches}</td>
-                      <td className="text-center py-4 px-2 text-green-400">{team.stats.wins}</td>
-                      <td className="text-center py-4 px-2 text-yellow-400">{team.stats.draws}</td>
-                      <td className="text-center py-4 px-2 text-red-400">{team.stats.losses}</td>
-                      <td className="text-center py-4 px-2">{team.stats.goalsScored}</td>
-                      <td className="text-center py-4 px-2">{team.stats.goalsConceded}</td>
-                      <td className="text-center py-4 px-2">
-                        {team.stats.goalsScored - team.stats.goalsConceded > 0 ? '+' : ''}
-                        {team.stats.goalsScored - team.stats.goalsConceded}
-                      </td>
-                      <td className="text-center py-4 px-2 font-bold text-lg">{team.stats.points}</td>
+            <div className="overflow-x-auto -mx-4 md:mx-0">
+              <div className="inline-block min-w-full align-middle">
+                <table className="w-full min-w-[640px]">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left py-3 px-2 md:px-4 text-xs md:text-sm">Команда</th>
+                      <th className="text-center py-3 px-1 md:px-2 text-xs md:text-sm">И</th>
+                      <th className="text-center py-3 px-1 md:px-2 text-xs md:text-sm">В</th>
+                      <th className="text-center py-3 px-1 md:px-2 text-xs md:text-sm">Н</th>
+                      <th className="text-center py-3 px-1 md:px-2 text-xs md:text-sm">П</th>
+                      <th className="text-center py-3 px-1 md:px-2 text-xs md:text-sm">ЗГ</th>
+                      <th className="text-center py-3 px-1 md:px-2 text-xs md:text-sm">ПГ</th>
+                      <th className="text-center py-3 px-1 md:px-2 text-xs md:text-sm">РГ</th>
+                      <th className="text-center py-3 px-1 md:px-2 font-bold text-xs md:text-sm">О</th>
                     </tr>
-                  ))}
-              </tbody>
-            </table>
-            <div className="mt-4 text-sm text-gray-400 space-y-1">
+                  </thead>
+                  <tbody>
+                    {/* Сортируем по очкам */}
+                    {[
+                      { name: 'РЕАЛ МАДРИД', stats: realStats, gradient: 'text-gradient-real' },
+                      { name: 'БАРСЕЛОНА', stats: barcaStats, gradient: 'text-gradient-barca' },
+                    ]
+                      .sort((a, b) => b.stats.points - a.stats.points)
+                      .map((team, idx) => (
+                        <tr key={team.name} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                          <td className="py-3 md:py-4 px-2 md:px-4">
+                            <span className={`font-bold text-xs md:text-base ${team.gradient}`}>
+                              {idx + 1}. <span className="hidden sm:inline">{team.name}</span>
+                              <span className="sm:hidden">{team.name === 'РЕАЛ МАДРИД' ? 'РЕАЛ' : 'БАРСА'}</span>
+                            </span>
+                          </td>
+                          <td className="text-center py-3 md:py-4 px-1 md:px-2 text-xs md:text-base">{team.stats.matches}</td>
+                          <td className="text-center py-3 md:py-4 px-1 md:px-2 text-green-400 text-xs md:text-base">{team.stats.wins}</td>
+                          <td className="text-center py-3 md:py-4 px-1 md:px-2 text-yellow-400 text-xs md:text-base">{team.stats.draws}</td>
+                          <td className="text-center py-3 md:py-4 px-1 md:px-2 text-red-400 text-xs md:text-base">{team.stats.losses}</td>
+                          <td className="text-center py-3 md:py-4 px-1 md:px-2 text-xs md:text-base">{team.stats.goalsScored}</td>
+                          <td className="text-center py-3 md:py-4 px-1 md:px-2 text-xs md:text-base">{team.stats.goalsConceded}</td>
+                          <td className="text-center py-3 md:py-4 px-1 md:px-2 text-xs md:text-base">
+                            {team.stats.goalsScored - team.stats.goalsConceded > 0 ? '+' : ''}
+                            {team.stats.goalsScored - team.stats.goalsConceded}
+                          </td>
+                          <td className="text-center py-3 md:py-4 px-1 md:px-2 font-bold text-base md:text-lg">{team.stats.points}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="mt-4 text-xs md:text-sm text-gray-400 space-y-1">
               <p>И - Игры, В - Победы, Н - Ничьи, П - Поражения</p>
               <p>ЗГ - Забитые голы, ПГ - Пропущенные голы, РГ - Разница голов, О - Очки</p>
             </div>
           </div>
 
           {/* Сыгранные матчи */}
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-center">
+          <div className="space-y-4 md:space-y-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-center">
               🏁 <span className="text-gradient-real">СЫГРАННЫЕ</span>{' '}
               <span className="text-gradient-barca">МАТЧИ</span>
             </h2>
 
             {completedMatches.length === 0 ? (
-              <div className="card text-center py-12">
-                <div className="text-6xl mb-4">🕰️</div>
-                <h3 className="text-xl font-bold mb-2">История матчей пуста</h3>
-                <p className="text-gray-400">Первый матч еще впереди</p>
+              <div className="card text-center py-8 md:py-12">
+                <div className="text-5xl md:text-6xl mb-3 md:mb-4">🕰️</div>
+                <h3 className="text-lg md:text-xl font-bold mb-2">История матчей пуста</h3>
+                <p className="text-gray-400 text-sm md:text-base">Первый матч еще впереди</p>
               </div>
             ) : (
               <div className="space-y-4">

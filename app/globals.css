@@ -15,29 +15,37 @@
     @apply bg-dark-primary text-white antialiased;
     font-family: 'Inter', system-ui, sans-serif;
   }
+  
+  /* Улучшенная читаемость на мобильных */
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px; /* Предотвращает зум на iPhone при фокусе на input */
+    }
+  }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
   }
 
   h1 {
-    @apply text-5xl md:text-7xl;
+    @apply text-4xl md:text-5xl lg:text-7xl;
     font-stretch: condensed;
   }
 
   h2 {
-    @apply text-4xl md:text-6xl;
+    @apply text-3xl md:text-4xl lg:text-6xl;
     font-stretch: condensed;
   }
 
   h3 {
-    @apply text-3xl md:text-4xl;
+    @apply text-2xl md:text-3xl lg:text-4xl;
   }
 }
 
 @layer components {
   .btn-primary {
     @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 active:scale-95;
+    min-height: 44px; /* iOS рекомендует минимум 44px для touch targets */
   }
 
   .btn-real {
@@ -49,7 +57,7 @@
   }
 
   .card {
-    @apply bg-dark-secondary border border-dark-accent rounded-xl p-6 transition-all duration-300;
+    @apply bg-dark-secondary border border-dark-accent rounded-xl p-4 md:p-6 transition-all duration-300;
   }
 
   .card-hover {
@@ -57,7 +65,8 @@
   }
 
   .input-field {
-    @apply w-full bg-dark-accent border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/10 transition-all;
+    @apply w-full bg-dark-accent border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/10 transition-all text-base;
+    min-height: 44px; /* iOS рекомендует минимум 44px для touch targets */
   }
 
   .vs-divider {
@@ -65,7 +74,7 @@
   }
 
   .vs-text {
-    @apply text-4xl md:text-6xl font-black bg-gradient-to-r from-neon-red via-white to-neon-blue bg-clip-text text-transparent;
+    @apply text-3xl md:text-4xl lg:text-6xl font-black bg-gradient-to-r from-neon-red via-white to-neon-blue bg-clip-text text-transparent;
     animation: pulse 2s ease-in-out infinite;
   }
 }

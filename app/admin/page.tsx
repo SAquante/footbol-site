@@ -225,25 +225,25 @@ export default function AdminPage() {
     <div className="min-h-screen gradient-overlay">
       <Navigation />
 
-      <main className="container mx-auto px-4 pt-32 pb-20">
+      <main className="container mx-auto px-4 pt-20 pb-12 md:pt-32 md:pb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
           {/* Шапка админки */}
-          <div className="card mb-8 bg-gradient-to-r from-real-gold/10 via-transparent to-barca-blue/10 border-2">
-            <div className="flex items-center justify-between flex-wrap gap-4">
+          <div className="card mb-6 md:mb-8 bg-gradient-to-r from-real-gold/10 via-transparent to-barca-blue/10 border-2">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div>
-                <h1 className="mb-2">
+                <h1 className="mb-2 text-3xl md:text-4xl lg:text-5xl">
                   <span className="text-gradient-real">⚙️ АДМИН</span>{' '}
                   <span className="text-gradient-barca">ПАНЕЛЬ</span>
                 </h1>
-                <p className="text-gray-400">
+                <p className="text-gray-400 text-sm md:text-base">
                   👋 Добро пожаловать, <span className="text-white font-bold">{user?.username}</span>
                 </p>
               </div>
-              <div className="flex gap-3">
-                <Link href="/" className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-white font-semibold">
+              <div className="flex gap-2 md:gap-3 w-full md:w-auto">
+                <Link href="/" className="flex-1 md:flex-none px-3 py-2 md:px-4 md:py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-white font-semibold text-center text-sm md:text-base">
                   🏠 На сайт
                 </Link>
                 <button
@@ -251,7 +251,7 @@ export default function AdminPage() {
                     logout();
                     router.push('/');
                   }}
-                  className="px-4 py-2 bg-red-500/20 hover:bg-red-500/30 rounded-lg transition-colors text-red-400 font-semibold"
+                  className="flex-1 md:flex-none px-3 py-2 md:px-4 md:py-2 bg-red-500/20 hover:bg-red-500/30 rounded-lg transition-colors text-red-400 font-semibold text-sm md:text-base"
                 >
                   🚪 Выйти
                 </button>
@@ -260,10 +260,10 @@ export default function AdminPage() {
           </div>
 
           {/* Вкладки */}
-          <div className="flex gap-2 mb-8 overflow-x-auto">
+          <div className="flex gap-2 mb-6 md:mb-8 overflow-x-auto pb-2 hide-scrollbar">
             <button
               onClick={() => setActiveTab('matches')}
-              className={`px-6 py-3 rounded-lg font-bold transition-all ${
+              className={`px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold transition-all whitespace-nowrap text-sm md:text-base ${
                 activeTab === 'matches'
                   ? 'bg-gradient-to-r from-real-gold to-yellow-400 text-black'
                   : 'bg-dark-accent text-gray-400 hover:text-white'
@@ -273,7 +273,7 @@ export default function AdminPage() {
             </button>
             <button
               onClick={() => setActiveTab('users')}
-              className={`px-6 py-3 rounded-lg font-bold transition-all ${
+              className={`px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold transition-all whitespace-nowrap text-sm md:text-base ${
                 activeTab === 'users'
                   ? 'bg-gradient-to-r from-barca-blue to-barca-red text-white'
                   : 'bg-dark-accent text-gray-400 hover:text-white'
