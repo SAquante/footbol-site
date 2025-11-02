@@ -36,7 +36,8 @@ export async function POST(request: Request) {
       conceded_real,
       conceded_barca,
       points_real,
-      points_barca
+      points_barca,
+      announcement
     } = body;
 
     if (!match_datetime || !location) {
@@ -110,6 +111,11 @@ export async function POST(request: Request) {
     if (points_barca !== undefined) {
       fields.push('points_barca');
       values.push(points_barca);
+      paramCount++;
+    }
+    if (announcement !== undefined) {
+      fields.push('announcement');
+      values.push(announcement);
       paramCount++;
     }
 

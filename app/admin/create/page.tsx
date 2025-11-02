@@ -21,6 +21,7 @@ export default function CreateMatchPage() {
     lineup_barca: '',
     coach_real: '',
     coach_barca: '',
+    announcement: '',
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -59,6 +60,7 @@ export default function CreateMatchPage() {
         lineup_barca: formData.lineup_barca || null,
         coach_real: formData.coach_real || null,
         coach_barca: formData.coach_barca || null,
+        announcement: formData.announcement || null,
       };
 
       // Если матч завершен, добавляем статистику
@@ -279,6 +281,27 @@ export default function CreateMatchPage() {
                       placeholder="Например:&#10;Саша&#10;Миша&#10;Дима&#10;..."
                     />
                   </div>
+                </div>
+              </section>
+
+              {/* Анонс матча */}
+              <section>
+                <h3 className="text-xl font-bold mb-4 text-white">📢 Анонс матча</h3>
+                <div>
+                  <label className="block text-sm font-semibold mb-2 text-gray-300">
+                    Анонс (будет отображаться на главной странице)
+                  </label>
+                  <textarea
+                    value={formData.announcement}
+                    onChange={(e) =>
+                      setFormData({ ...formData, announcement: e.target.value })
+                    }
+                    className="input-field min-h-[120px] resize-y"
+                    placeholder="Например:&#10;Грандиозное противостояние! Не пропустите самый захватывающий матч сезона! Битва за лидерство продолжается..."
+                  />
+                  <p className="text-xs text-gray-500 mt-2">
+                    💡 Напишите интересный текст, который будет мотивировать болельщиков прийти на матч
+                  </p>
                 </div>
               </section>
 

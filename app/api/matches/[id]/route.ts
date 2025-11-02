@@ -100,6 +100,10 @@ export async function PUT(
       fields.push(`points_barca = $${paramCount++}`);
       values.push(data.points_barca);
     }
+    if (data.announcement !== undefined) {
+      fields.push(`announcement = $${paramCount++}`);
+      values.push(data.announcement);
+    }
 
     if (fields.length === 0) {
       return NextResponse.json(

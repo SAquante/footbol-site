@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { format } from 'date-fns';
 import { ru } from 'date-fns/locale';
+import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import CountdownTimer from '@/components/CountdownTimer';
 import { Match } from '@/types';
@@ -270,6 +271,26 @@ export default function HomePage() {
                   </motion.div>
                 </div>
 
+                {/* Анонс матча */}
+                {nextMatch.announcement && (
+                  <motion.div
+                    className="mt-6 md:mt-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.2 }}
+                  >
+                    <div className="bg-gradient-to-r from-real-gold/5 via-white/5 to-barca-blue/5 border border-white/20 rounded-2xl p-4 md:p-6">
+                      <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                        <span className="text-2xl md:text-3xl">📢</span>
+                        <h3 className="text-lg md:text-xl font-bold text-white">АНОНС МАТЧА</h3>
+                      </div>
+                      <p className="text-sm md:text-base text-gray-300 leading-relaxed whitespace-pre-line">
+                        {nextMatch.announcement}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+
                 {/* Призыв к действию */}
                 <motion.div
                   className="mt-6 md:mt-8 text-center"
@@ -325,18 +346,18 @@ export default function HomePage() {
                 const isDraw = match.score_real === match.score_barca;
 
                 return (
-                  <motion.div
-                    key={match.id}
-                    className={`card-hover relative overflow-hidden ${
-                      realWon ? 'border-real-gold/40' : 
-                      barcaWon ? 'border-barca-blue/40' : 
-                      'border-white/20'
-                    }`}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 + index * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                  >
+                  <Link key={match.id} href={`/match/${match.id}`}>
+                    <motion.div
+                      className={`card-hover relative overflow-hidden cursor-pointer ${
+                        realWon ? 'border-real-gold/40' : 
+                        barcaWon ? 'border-barca-blue/40' : 
+                        'border-white/20'
+                      }`}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 + index * 0.1 }}
+                      whileHover={{ scale: 1.05, y: -5 }}
+                    >
                     {/* Победный фон */}
                     {realWon && (
                       <div className="absolute inset-0 bg-gradient-to-br from-real-gold/5 to-transparent" />
@@ -404,6 +425,7 @@ export default function HomePage() {
                       )}
                     </div>
                   </motion.div>
+                  </Link>
                 );
               })}
             </div>

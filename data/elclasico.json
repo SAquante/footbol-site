@@ -8,24 +8,139 @@
       "plain_password": "qopdota2",
       "role": "superadmin",
       "created_at": "2025-11-01T12:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "username": "trenerben",
+      "email": "trenerben@elclasico.ru",
+      "password_hash": "$2a$10$VDZ/ZZR38L6i1khJ59sl.OW.0xngIckmuwforTUo7sXwJkQch9bWG",
+      "plain_password": "1234567890",
+      "role": "admin",
+      "created_at": "2025-11-02T12:00:00.000Z"
     }
   ],
   "matches": [
     {
       "id": 10,
       "created_at": "2025-11-01T14:58:22.006Z",
-      "updated_at": "2025-11-01T14:58:22.006Z",
+      "updated_at": "2025-11-02T21:48:34.826Z",
       "match_datetime": "2025-11-03T17:00:00.000Z",
       "location": "ул. Константина Заслонова, 23 корпус 4, Санкт-Петербург, Россия, 191119",
       "status": "scheduled",
       "lineup_real": null,
-      "lineup_barca": null,
-      "coach_real": null,
-      "coach_barca": null
+      "lineup_barca": "1. Сергей\n2. бен\n3. Евген\n4. Миша\n5. Надир\n6. Олег\n7. Темур\n8.\n9.",
+      "coach_real": "Серёга Лысое зло",
+      "coach_barca": "Бен",
+      "announcement": "🔥 Грандиозное противостояние легендарных команд!\n\nНе пропустите самый захватывающий матч сезона! Битва за лидерство между Реал Мадрид и Барселона обещает быть феерической!\n\n⚽ Приходите поддержать свою команду!\n📍 Стадион Локомотив ждет вас!\n🎉 Будет жарко!",
+      "score_real": null,
+      "score_barca": null,
+      "goals_real": null,
+      "goals_barca": null,
+      "conceded_real": null,
+      "conceded_barca": null,
+      "points_real": null,
+      "points_barca": null
+    },
+    {
+      "id": 11,
+      "created_at": "2025-10-20T10:00:00.000Z",
+      "updated_at": "2025-11-02T20:54:53.420Z",
+      "match_datetime": "2025-10-23T18:30:00.000Z",
+      "location": "ул. Константина Заслонова, 23 корпус 4, Санкт-Петербург, Россия, 191119",
+      "status": "completed",
+      "lineup_real": "Армия тьмы",
+      "lineup_barca": "1. Серёга\n2. Бен\n3. Глеб\n4. Олег\n5. Даня\n6. Кира\n7. Кира\n8. Кират+1\n9. Миха\n10. Глеб +1",
+      "coach_real": "Серёга Лысое зло",
+      "coach_barca": "Бен",
+      "announcement": null,
+      "score_real": 1,
+      "score_barca": 12,
+      "goals_real": 1,
+      "goals_barca": 12,
+      "conceded_real": 12,
+      "conceded_barca": 1,
+      "points_real": 0,
+      "points_barca": 3
+    },
+    {
+      "id": 12,
+      "created_at": "2025-10-24T10:00:00.000Z",
+      "updated_at": "2025-11-02T20:55:03.027Z",
+      "match_datetime": "2025-10-27T17:00:00.000Z",
+      "location": "ул. Константина Заслонова, 23 корпус 4, Санкт-Петербург, Россия, 191119",
+      "status": "completed",
+      "lineup_real": "Армия тьмы",
+      "lineup_barca": "1. Бен\n2. Гоша\n3.ангел\n4.миша\n5.миша+1\n6. Олег\n7.\n8. Олег\n9.",
+      "coach_real": "Серёга Лысое зло",
+      "coach_barca": "Бен",
+      "announcement": null,
+      "score_real": 7,
+      "score_barca": 9,
+      "goals_real": 7,
+      "goals_barca": 9,
+      "conceded_real": 9,
+      "conceded_barca": 7,
+      "points_real": 0,
+      "points_barca": 3
+    },
+    {
+      "id": 13,
+      "created_at": "2025-09-28T10:00:00.000Z",
+      "updated_at": "2025-11-02T20:55:12.558Z",
+      "match_datetime": "2025-09-30T18:30:00.000Z",
+      "location": "ул. Константина Заслонова, 23 корпус 4, Санкт-Петербург, Россия, 191119",
+      "status": "completed",
+      "lineup_real": "Армия тьмы",
+      "lineup_barca": "1. Бен \"не многословный\"\n2. Серёга \"не прожёванный\"\n3. Миша \"непостижимый\"\n4. Евген \"Ни не пробьешь\"\n5. Шах \"недосущий\"\n6. Олег \"Все возданием\"\n7. Миха \"Архангел Михаил\"\n8. Олег \"Иди сюда\"\n9. Даня \"Эрудит\"\n10. Кира \"зд\"",
+      "coach_real": "Серёга Лысое зло",
+      "coach_barca": "Бен \"не многословный\"",
+      "announcement": null,
+      "score_real": 2,
+      "score_barca": 1,
+      "goals_real": 2,
+      "goals_barca": 1,
+      "conceded_real": 1,
+      "conceded_barca": 2,
+      "points_real": 3,
+      "points_barca": 0
     }
   ],
-  "nextUserId": 7,
-  "nextMatchId": 11,
+  "nextUserId": 8,
+  "nextMatchId": 14,
+  "comments": [
+    {
+      "id": 1,
+      "match_id": 12,
+      "user_id": 1,
+      "username": "Сергей",
+      "comment": "Отличный матч! Барселона сыграла великолепно! 🏆",
+      "created_at": "2025-11-02T21:08:45.192Z"
+    }
+  ],
+  "reactions": [
+    {
+      "id": 1,
+      "match_id": 12,
+      "user_id": 1,
+      "username": "Сергей",
+      "type": "🔥",
+      "created_at": "2025-11-02T21:08:33.777Z"
+    }
+  ],
+  "predictions": [
+    {
+      "id": 1,
+      "match_id": 10,
+      "user_id": 1,
+      "username": "Сергей",
+      "predicted_score_real": 5,
+      "predicted_score_barca": 4,
+      "points_earned": null,
+      "created_at": "2025-11-02T21:09:15.459Z"
+    }
+  ],
+  "media": [],
+  "audit_logs": [],
   "settings": {
     "siteName": "Amateur El Clásico",
     "database": "JSON (data/elclasico.json)",

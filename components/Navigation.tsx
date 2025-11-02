@@ -14,6 +14,7 @@ export default function Navigation() {
   const navLinks = [
     { href: '/', label: 'Главная' },
     { href: '/schedule', label: 'Расписание' },
+    { href: '/matches', label: 'Матчи' },
     { href: '/stats', label: 'Статистика' },
   ];
 
@@ -38,7 +39,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

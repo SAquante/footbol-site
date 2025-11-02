@@ -1,6 +1,28 @@
 {
   "name": "amateur-el-clasico",
   "version": "1.0.0",
+  "description": "⚽ Официальный веб-сайт любительских футбольных команд Реал Мадрид и Барселона",
+  "author": "Amateur El Clásico Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/amateur-el-clasico.git"
+  },
+  "keywords": [
+    "football",
+    "soccer",
+    "el-clasico",
+    "real-madrid",
+    "barcelona",
+    "amateur",
+    "next.js",
+    "react",
+    "typescript"
+  ],
+  "homepage": "https://yesfootboll.online",
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/amateur-el-clasico/issues"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
